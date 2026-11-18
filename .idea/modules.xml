@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cscdjango66-master.iml" filepath="$PROJECT_DIR$/.idea/cscdjango66-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/csc41_django66-master.iml" filepath="$PROJECT_DIR$/.idea/csc41_django66-master.iml" />
     </modules>
   </component>
 </project>
