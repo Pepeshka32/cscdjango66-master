@@ -44,7 +44,15 @@ INSTALLED_APPS = [
     'pages',
 ]
 
-INSTALLED_APPS += ["accounts", "courses"]
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "courses",  # додано вами
+]
 AUTH_USER_MODEL = "accounts.User"
 
 MIDDLEWARE = [

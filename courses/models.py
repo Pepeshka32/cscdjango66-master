@@ -1,15 +1,17 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 class Course(models.Model):
+    STATUS_CHOICES = [
+        ("draft", "Draft"),
+        ("published", "Published"),
+    ]
+
     title = models.CharField(max_length=150)
     slug = models.SlugField(unique=True)
-    capacity = models.PositiveIntegerField(default=10)
-    status = models.CharField(max_length=12, choices=[
-        ("draft", "Чернетка"), ("published", "Опубліковано")
-    ], default="draft")
+    capacity = models.PositiveIntegerField(validators=[MinValueValidator(1)])
+    status = models.CharField(choices=STATUS_CHOICES, default="draft", max_length=12)
+    created_at = models.DateTimeField(auto_now_add=True)
 
-class Lesson(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="lessons")
-    title = models.CharField(max_length=150)
-    position = models.PositiveIntegerField()
-
+    def __str__(self):
+        return self.title
